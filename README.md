@@ -4,8 +4,9 @@ Java Implementation of classical game 4 x 4 with one empty cell.  https://en.wik
 
 
 The project split into two main packages. 
-Game - puzzle15 logic
-Console - terminal version representation and user keyboard input
+* `Game` - puzzle15 logic
+* `Console` - terminal version representation and user keyboard input
+
 In a future as optional implementations could be added GUI implementation.
 
 Requires Java 8 version or higher.
@@ -13,14 +14,18 @@ Requires Java 8 version or higher.
 
 As dependencies used Lombok library. You should be ready to install `Lombok` plugin and enable `Annotation Processing` option in case you import Project into Intellij Idea IDE. 
 
-The current version contains only console implementation of the game. Entry point main class at puzzle15.console.App contains a static main method. 
-Main method read user command-line arguments or default values using `picocli` lib. After initial process executes `ConsoleLoop.run()`.  At this point will be initialized all primary orchestration. And Pzzle15 `Game` logic will be called with input events.
+The current version contains only console implementation of the game. Entry point main class at `puzzle15.console.App` contains a static main method. 
+Main method reads user command-line arguments or default values using `picocli` lib. 
+After initial process `ConsoleLoop.run()` will be executed. At this point will be initialized all primary orchestration. And Pzzle15 `Game` logic will be called with input events.
+
 `jansi` library used for board render to support various platforms. Game must be playable on windows as well.
 
 # Control keys.
-    * Q / double ESC- quit
-    * w,a,s,d - cursor movements
-    * VI movement keys keys - alternative cursor movement
+* Q / double ESC- quit
+* w,a,s,d - cursor movements
+* VI movement keys keys - alternative cursor movement
+
+(For a multiplatform purpose, I had a problem to use arrow keys.)
 
 # Build Project:
 
@@ -60,7 +65,7 @@ Puzzle15
 ``` 
 
 Additional options allows start game with tweaks like:
-    - Different board sizes length/height
-    - Render board without clearing screen
-    - Predefined board cells settings. Like SIMPLE - when game is almost solved
+* Different board sizes length/height
+* Render board without clearing screen
+* Predefined board cells settings. Like SIMPLE - when game is almost solved
 
